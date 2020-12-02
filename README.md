@@ -33,7 +33,7 @@ copy kismet_exporter.env.example to kismet_exporter.env with the correct kismet 
 - job_name: kismet-exporter
   static_configs: 
   	-targets: 
-  	   - localhost:9850 
+  	   - localhost:8501 
 ```
 
 
