@@ -28,7 +28,7 @@ use the docker compose file, this is just set up to run the exporter.
 copy kismet_exporter.env.example to kismet_exporter.env with the correct kismet information  
 
 
-# Example Prometheus config assuming promethues runs on the same host as the docker container.  
+## Example Prometheus config assuming promethues runs on the same host as the docker container.  
 ```
 - job_name: kismet-exporter
   static_configs: 
