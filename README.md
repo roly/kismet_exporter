@@ -23,19 +23,17 @@ this will probably expand as I figure more things out, its likely also way ineff
 use the docker compose file, this is just set up to run the exporter. 
 
 
-## env variables that need to be set 
+## env variables
 
 copy kismet_exporter.env.example to kismet_exporter.env with the correct kismet information  
 
-
-```
 
 # Example Prometheus config assuming promethues runs on the same host as the docker container.  
 ```
 - job_name: kismet-exporter
   static_configs: 
   	-targets: 
-  		- localhost:9850 
+  	   - localhost:9850 
 ```
 
 
