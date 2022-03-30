@@ -2,7 +2,7 @@
 
 Using [python-kismet-rest](https://github.com/kismetwireless/python-kismet-rest/) to export some stats to prometheus so that we can graph things 
 
-this is just me playing so things might be massively wrong, right now this is me having fun with monitoring my the wifi enviroment at my house. I live near a main road so it is fun to see how many Porsch hot spots go by or get a general idea of how busy things are by seeing how many devices are about. 
+this is just me playing so things might be massively wrong, right now this is me having fun with monitoring the wifi enviroment at my house. I live near a main road so it is fun to see how many Porsch hot spots go by or get a general idea of how busy things are by seeing how many devices are about. 
 
 this will probably expand as I figure more things out, its likely also way ineffecnt to maybe just querying the kismet DB directly
 
@@ -23,19 +23,17 @@ this will probably expand as I figure more things out, its likely also way ineff
 use the docker compose file, this is just set up to run the exporter. 
 
 
-## env variables that need to be set 
+## env variables
 
 copy kismet_exporter.env.example to kismet_exporter.env with the correct kismet information  
 
 
-```
-
-# Example Prometheus config assuming promethues runs on the same host as the docker container.  
+## Example Prometheus config assuming promethues runs on the same host as the docker container.  
 ```
 - job_name: kismet-exporter
   static_configs: 
   	-targets: 
-  		- localhost:9850 
+  	   - localhost:8501 
 ```
 
 
