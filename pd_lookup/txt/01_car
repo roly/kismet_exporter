@@ -1,0 +1,73 @@
+^Audi
+^MMI_
+^Direct-BMW
+^Direct-[0-9]+-BMW
+^BMW
+^My BMW
+Bentley
+Buick
+Cadillac
+Cayenne
+Chevrolet
+Chrysler
+Dodge
+Ferrari
+Ford
+^GEM
+Goluk
+Honda
+Hummer
+Hyundai
+Infiniti
+Isuzu
+^JAG
+Jaguar
+Jeep
+^Kia
+^LR[0-9]+
+Lamborghini
+Land Rover
+Lexus
+Lincoln
+Lotus
+^MB Hotspot
+^MB Wlan
+^Direct-Mbux
+^Direct-Mb
+^MBUX
+Mazda
+Mercedes-Benz
+Mercury
+^Mini
+Mitsubishi
+Nissan
+Oldsmobile
+Peugeot
+Pontiac
+Porsche
+^RR[0-9]+
+Saab
+Saturn
+Seat
+Skoda
+Subaru
+Suzuki
+Taycan
+Toyota
+^My VW
+^VW.WLAN
+Golf
+Volkswagen
+Volvo
+Tesla
+Carplay
+AndroidAuto
+Automotive
+^VLine_Wireless
+^My MIB
+^MYCAR
+^MY CAR
+^incar
+^Car
+^Campervan
+[a-zA-Z]'s car
