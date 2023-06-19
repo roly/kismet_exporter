@@ -51,6 +51,8 @@ ConnectedCam
 HaloGo$
 HaloPro$
 HaloView$
+WIFI_.*HaloUltra
+DDPai_Mini3$
 RoadPatrol
 ^Snooper
 ^OEWitness-
@@ -58,5 +60,10 @@ RoadPatrol
 ^CVR_M5
 ^ThiEYE_CAM
 ^M300S
+^B1W_
+^midr-cardvr-
+^MyDean
+^FHD300GW
+^IROAD_X9
 Dashcam
 Dash-
