@@ -41,6 +41,7 @@ Vugera
 Worldview
 Yooilstar
 Kenwood
+EDR_X43_[0-9a-f]+
 YICarCam
 ConnectedCam
 ^VIOFO_
@@ -51,8 +52,11 @@ ConnectedCam
 HaloGo$
 HaloPro$
 HaloView$
+HaloDrive$
 WIFI_.*HaloUltra
 DDPai_Mini3$
+^WiFi_[0-9]+AuraHD3
+^AUTO-VOX D6PRO [0-9a-f]+i
 RoadPatrol
 RoadAngel$
 ^Snooper
@@ -67,5 +71,7 @@ RoadAngel$
 ^FHD300GW
 ^IROAD_X9
 ^INNOVV_K3
+.*_Cam
+.*_Camera
 Dashcam
 Dash-

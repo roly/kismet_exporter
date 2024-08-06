@@ -10,6 +10,7 @@ Cadillac
 Cayenne
 Chevrolet
 Chrysler
+^DACIA_[0-9]+
 Dodge
 Ferrari
 Ford
@@ -45,6 +46,7 @@ Oldsmobile
 Peugeot
 Pontiac
 Porsche
+^Panamera_
 ^RR[0-9]+
 Saab
 Saturn
@@ -59,11 +61,13 @@ Toyota
 Golf
 Volkswagen
 Mercedes
+^W113-[0-9a-f]+
 Volvo
 Tesla
 Carplay
 AndroidAuto
 Automotive
+Alpsalpine
 ^VLine_Wireless
 ^My MIB
 ^MYCAR
@@ -71,4 +75,5 @@ Automotive
 ^incar
 ^Car
 ^Campervan
+^Auto-
 [a-zA-Z]'s car
