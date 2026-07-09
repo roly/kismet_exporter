@@ -5,9 +5,11 @@ import search
 class TestgetSearch(unittest.TestCase):
     def test_search_init(self):
         pdsearch = search.PersonalDevice()
-    def test_get_map(self): 
+    def test_get_patterns(self):
         pdsearch = search.PersonalDevice()
-        map = pdsearch.getPDMap()
+        patterns = pdsearch.getPatterns()
+        self.assertIsInstance(patterns, list)
+        self.assertGreater(len(patterns), 0)
 
     def test_search(self):
         pdsearch=search.PersonalDevice()

@@ -1,11 +1,11 @@
-FROM python:3
+FROM python:3.12-slim
 
-RUN pip3 install prometheus_client
-RUN pip3 install python-dateutil
-RUN pip3 install kismet_rest
+COPY requirements.txt /kis_exp/requirements.txt
+RUN pip install --no-cache-dir -r /kis_exp/requirements.txt
 
 COPY kismet_exporter.py /kis_exp/
 COPY pd_lookup /kis_exp/pd_lookup/
 
-CMD [ "python", "./kis_exp/kismet_exporter.py" ]
-EXPOSE 8501 
+WORKDIR /kis_exp
+CMD [ "python", "kismet_exporter.py" ]
+EXPOSE 8501
