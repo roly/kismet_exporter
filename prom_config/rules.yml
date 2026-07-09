@@ -1,0 +1,9 @@
+groups:
+  - name: kismet_exporter
+    interval: 5s
+    rules:
+      - record: kismet:signal_index:avg20s
+        expr: >
+          sum by (ssid, personal_device, personal_device_match) (
+            2 * (avg_over_time(kismet_device_signal_strength{ssid!~"([|]?vwire|[|]?valhalla).*"}[20s]) + 100)
+          )
