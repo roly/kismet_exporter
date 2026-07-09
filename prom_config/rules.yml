@@ -1,6 +1,6 @@
 groups:
   - name: kismet_exporter
-    interval: 5s
+    interval: 2s
     rules:
       - record: kismet:signal_index:avg20s
         expr: >

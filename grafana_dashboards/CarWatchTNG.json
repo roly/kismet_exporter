@@ -58,7 +58,7 @@
               }
             ],
             "queryOptions": {
-              "interval": "5s"
+              "interval": "2s"
             },
             "transformations": []
           }
@@ -217,8 +217,9 @@
   "preload": true,
   "tags": [],
   "timeSettings": {
-    "autoRefresh": "5s",
+    "autoRefresh": "2s",
     "autoRefreshIntervals": [
+      "2s",
       "5s",
       "10s",
       "30s",
