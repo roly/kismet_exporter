@@ -1,1 +1,3 @@
 kismet_exporter.env
+__pycache__/
+*.pyc
