@@ -4,11 +4,13 @@ Thinkware
 Pittasoft
 Mivue
 Nextbase
+Nice-DVR
 Blackcop
 Caidrox
 CNS-Link
 Cowon
 D-Teg
+Essgoo
 FineDigital
 FineVu
 G-Pass
@@ -32,6 +34,7 @@ PowerUCC
 Roadcam
 Recodia
 Runz
+REDTIGER
 Sanesys
 Sooinkorea
 Topsync
@@ -53,16 +56,22 @@ HaloGo$
 HaloPro$
 HaloView$
 HaloDrive$
+Halo Ultima
+Halo Play
 WIFI_.*HaloUltra
 DDPai_Mini3$
 ^WiFi_[0-9]+AuraHD3
 ^AUTO-VOX D6PRO [0-9a-f]+i
+^PS_DVR
 RoadPatrol
 RoadAngel$
+^DDPAI_mola
+^CB_SMARTCAM_[0-9]+
 ^Snooper
 ^OEWitness-
 ^WCVR
 ^CVR_M5
+^CVR_[0-9a-f]+
 ^ThiEYE_CAM
 ^M300S
 ^B1W_

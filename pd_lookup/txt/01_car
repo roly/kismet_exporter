@@ -1,10 +1,12 @@
 ^Audi
+^AP[a-zA-z0-9]{10,15}
 ^MMI_
 ^Direct-BMW
 ^Direct-[0-9]+-BMW
 ^BMW
 ^My BMW
 Bentley
+^BYD
 Buick
 Cadillac
 Cayenne
@@ -14,6 +16,8 @@ Chrysler
 Dodge
 Ferrari
 Ford
+^911_[0-9]+
+RSQ2
 ^GEM
 Goluk
 Honda
@@ -36,6 +40,9 @@ Lotus
 ^Direct-Mbux
 ^Direct-Mb
 ^MBUX
+^My Citroen
+^My MAN
+^My Vauxhall
 Mazda
 Mercedes-Benz
 Mercury
@@ -54,20 +61,26 @@ Seat
 Skoda
 Subaru
 Suzuki
+^smartBox-[0-9A-F]+
+^SmartDongle_
+^AIBox-[A-Z]{2}-[a-z0-9]+
 Taycan
 Toyota
 ^My VW
 ^VW.WLAN
+^VW_[0-9]+
 Golf
 Volkswagen
 Mercedes
 ^W113-[0-9a-f]+
+^Pioneer_[0-9a-f]+_[0-9a-f]+
 Volvo
 Tesla
 Carplay
 AndroidAuto
 Automotive
 Alpsalpine
+^ReceiverAp-
 ^VLine_Wireless
 ^My MIB
 ^MYCAR
@@ -76,4 +89,8 @@ Alpsalpine
 ^Car
 ^Campervan
 ^Auto-
+^HS-
+^T93_
+^Apple$
+^AP_[0-9a-f]
 [a-zA-Z]'s car
