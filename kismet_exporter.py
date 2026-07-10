@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from prometheus_client import start_http_server, REGISTRY
 from prometheus_client.core import CounterMetricFamily, GaugeMetricFamily
 import kismet_rest
+import requests
 from pd_lookup import search as pdsearch
 
 kismet_url = os.getenv('KISMET_URL', None)
@@ -36,6 +37,28 @@ DEVICE_FIELDS = [
     ["kismet.device.base.signal/kismet.common.signal.last_signal", "kismet.device.base.signal.last_signal"],
     ["dot11.device/dot11.device.bss_timestamp", "dot11.device.bss_timestamp"],
 ]
+
+# Data-source health. Kismet's /datasource/all_sources.json is polled at most
+# every SOURCE_CACHE_TTL seconds and cached, so it doesn't add a Kismet
+# round-trip to every Prometheus scrape (which has a 1.5s timeout).
+SOURCE_CACHE_TTL = 8
+_source_cache = {"ts": 0.0, "data": []}
+
+def get_sources():
+    now = time.time()
+    if _source_cache["data"] and now - _source_cache["ts"] < SOURCE_CACHE_TTL:
+        return _source_cache["data"]
+    try:
+        resp = requests.get(
+            "{}/datasource/all_sources.json".format(kismet_url),
+            auth=(kismet_username, kismet_password), timeout=1.0)
+        resp.raise_for_status()
+        _source_cache["data"] = resp.json()
+        _source_cache["ts"] = now
+    except Exception:
+        pass  # keep last-known data on a transient failure
+    return _source_cache["data"]
+
 
 class KisCollector(object):
 
@@ -86,6 +109,24 @@ class KisCollector(object):
         yield pmetric
         yield bssmetric
         yield fmetric
+
+        # Data-source health, so the kiosk can show "N/M radios live" and catch a
+        # stalled source (running but its packet counter has stopped growing).
+        runmetric = GaugeMetricFamily('kismet_datasource_running',
+                                      'kismet data source running (1) or not (0)',
+                                      labels=['source', 'interface'])
+        srcpktmetric = CounterMetricFamily('kismet_datasource_packets',
+                                           'total packets captured by a data source',
+                                           labels=['source', 'interface'])
+        for s in get_sources():
+            name = str(s.get('kismet.datasource.name', ''))
+            iface = s.get('kismet.datasource.interface', '') or ''
+            running = 1.0 if s.get('kismet.datasource.running') else 0.0
+            pkts = s.get('kismet.datasource.num_packets') or 0
+            runmetric.add_metric([name, iface], running)
+            srcpktmetric.add_metric([name, iface], float(pkts))
+        yield runmetric
+        yield srcpktmetric
 
 
 if __name__ == "__main__":
