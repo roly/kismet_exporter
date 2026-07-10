@@ -66,7 +66,12 @@ class KisCollector(object):
             fmetric.add_metric(label_values, device['kismet.device.base.frequency'])
 
             lastSig = device.get('kismet.device.base.signal.last_signal')
-            if lastSig is not None:
+            # Kismet reports last_signal = 0 dBm when it has no valid RSSI for a
+            # device (common for ad-hoc/AWDL peer devices). Real signal is always
+            # negative, so skip the 0 placeholder — otherwise the signal_index
+            # rule turns it into 2*(0+100)=200, painting a max-strength lane for
+            # a device we can't actually hear.
+            if lastSig is not None and lastSig < 0:
                 smetric.add_metric(label_values, lastSig)
 
             dmetric.add_metric(label_values, device['kismet.device.base.datasize'])
