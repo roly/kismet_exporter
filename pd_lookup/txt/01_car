@@ -69,6 +69,7 @@ Toyota
 ^My VW
 ^VW.WLAN
 ^VW_[0-9]+
+^PROJ[0-9a-f]+]
 Golf
 Volkswagen
 Mercedes
@@ -76,10 +77,13 @@ Mercedes
 ^Pioneer_[0-9a-f]+_[0-9a-f]+
 Volvo
 Tesla
+AAWireless
 Carplay
 AndroidAuto
 Automotive
 Alpsalpine
+^Mavlou-
+^TF790-
 ^ReceiverAp-
 ^VLine_Wireless
 ^My MIB
@@ -92,5 +96,6 @@ Alpsalpine
 ^HS-
 ^T93_
 ^Apple$
+^Apple, Inc.$
 ^AP_[0-9a-f]
 [a-zA-Z]'s car
